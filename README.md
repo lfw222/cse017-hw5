@@ -52,5 +52,5 @@ Methods:
 + void add_edge(int from, int to)    // add an edge between node "from" and node "to"
 + void remove_edge(int from, int to) // remove an edge between node "from" and node "to"
 + int[] traverse_bfs(int start)      // use the queue you implemented to write a breadth first search traversal over the graph. Returns an array with the nodes in order of traversal. Start indicates the starting node
-+ int[] traverse_dfs(int start)      // use the stack  you implemented to write a depth first search traversal over the graph. Returns an array with the nodes in order of traversal. Start indicates the starting node.
++ int[] traverse_dfs(int start)      // use the stack you implemented to write a depth first search traversal over the graph. Returns an array with the nodes in order of traversal. Start indicates the starting node.
 ```
