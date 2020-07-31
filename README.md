@@ -42,7 +42,7 @@ Methods:
 
 Implement a graph datastructure as a class with the following fields and methods. Assume the graph nodes are labeled corresponding to their row/column placement in the adjacency matrix (e.g. Node 3 is row 3/ column 3).
 
-```Graph
+```java
 Fields: 
 - int[][] graph                      // adjacency matrix representing the graph
 Methods:
