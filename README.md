@@ -28,7 +28,7 @@ Implement a [circular queue](https://en.wikipedia.org/wiki/Circular_buffer) data
 
 ```java
 Fields: 
-- int[][] G           // fixed size array that holds items of queue
+- int[] list          // fixed size array that holds items of queue
 - int front           // index of front of the queue
 - int back            // index of the back of the queue
 - int capacity        // how many items can the queue hold
