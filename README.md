@@ -1,5 +1,7 @@
 # CSE 017 - Homework 5
 
+Due: 8/06 by end of day
+
 Implement the following classes. You can add any additional classes, fields, or methods you deem necessary to complete this assignment.
 
 ## Stack.java
