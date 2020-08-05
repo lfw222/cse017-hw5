@@ -9,7 +9,7 @@ public class Stack{
     
     public Stack(int capacity){
         this.list = new int [capacity];
-        this.capacity = 4;
+        this.capacity = capacity;
         this.top = -1;
         this.size = 0;
     }
@@ -35,7 +35,7 @@ public class Stack{
         }
     }
     public int peek(){
-        if(this.top == 0){
+        if(this.size == 0){
             throw new RuntimeException("No more Items in list");
         }
         else{
