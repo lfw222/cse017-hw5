@@ -1,67 +1,59 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 public class Stack{
-    private static ArrayList<Integer> list;
-    private static int top;
-    private static int capacity;
-    private static int size;
+    private int [] list;
+    private int top;
+    private int capacity;
+    private int size;
+     
     
-        
     public Stack(int capacity){
-        capacity = 10;
-        list = new ArrayList <Integer>();
-        list.add(1);
-        list.add(2);
-        list.add(3);
-        list.add(4);
-        list.add(5);
-        list.add(6);
-        list.add(7);
-        list.add(8);
-        list.add(9);
-        list.add(10);
-        top = 9;
-        size = list.size();
+        this.list = new int [capacity];
+        this.capacity = 4;
+        this.top = -1;
+        this.size = 0;
     }
     public int pop(){
-        if(top == 0){
+        if(this.top == 0){
             throw new RuntimeException("No more Items in list");
         }
         else{
            // list.remove(top);
-            top -= 1;
-            size -= 1;
-            return list.remove(top + 1);
+            this.top -= 1;
+            this.size -= 1;
+            return list[top];
         }
     }
     public void push(int item){
-        if (top == capacity){
+        if (top == this.capacity){
             throw new RuntimeException("At max capacity");
         }
-        else{
-            list.add(item);
-            item = list.get(top);
-            top += 1;
-            size += 1;
+        else{    
+            this.top += 1;
+            this.list[top] = item;
+            this.size += 1;
         }
     }
     public int peek(){
-        if(top == 0){
+        if(this.top == 0){
             throw new RuntimeException("No more Items in list");
         }
         else{
-            return list.get(top);
+            return list[top];
         }
     }
    public static void main(String [] args){
-       Stack stack = new Stack(capacity);
-       System.out.println(list);
-       System.out.println(list.get(top));
-       stack.pop();
-       System.out.println(list.get(top));
-       System.out.println(list);
+     Stack stack = new Stack(4);
+     stack.push(1);
+     //System.out.println(Arrays.toString(stack.list));
+     stack.push(4);
+     stack.push(3);
+     stack.push(2);
+     System.out.println(stack.peek());
+     stack.pop();
+     System.out.println(stack.peek());
 
-        stack.push(4);
-        System.out.println(list.get(top));
-        System.out.println(list);
+
+
    }
 }
