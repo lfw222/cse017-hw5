@@ -1,4 +1,5 @@
-public class Graph {
+import java.util.ArrayList;
+public class Graph{
     private int [][] graph;
     
     public Graph(int [][] graph){
@@ -15,13 +16,23 @@ public class Graph {
     public int [] traverse_bfs(int start){
         Queue Q = new Queue(5);
         boolean [] visited = new boolean [graph.length];
-        push(start);
-        while(Q.this.size > 0){
-            int n = Q.pop();
-            if(n == 1){
+        int [] traversed = new int [graph.length];
+        Q.push(start);
+        visited[start] = true;
+        System.out.println(Q.peek());
+        while(Q.getsize() > 0){
+            int n = Q.peek();
+            Q.pop();
+            for(int i = 0; i <graph[n].length -1; i++){
+                if (graph[n][i] == 1 && visited[i] == false){
+                    Q.push(i+1);
+                    visited[i] = true;
+                    traversed[i] = n;
+                }
 
             }
         }
+        return traversed;
     }
     public void print(){
         for(int i=0; i < graph.length; i++){
@@ -51,6 +62,8 @@ public class Graph {
         G.remove_egde(0, 4);
 
         G.print();
+
+        G.traverse_bfs(1);
 
 
 
