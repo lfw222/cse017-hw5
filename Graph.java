@@ -29,6 +29,9 @@ public class Graph{
                     visited[i] = true;
                     traversed[i] = n;
                 }
+                else{
+                    continue;
+                }
 
             }
         }

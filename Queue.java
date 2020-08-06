@@ -15,10 +15,11 @@ public class Queue {
 
     } // 1-arg constructor with initial capacity
     public int pop(){
-        if(this.size == 0){
+        if(this.back == this.front){
             throw new RuntimeException("This queue is empty");
         }
         else{
+            this.size -= 1;
             this.front = (front + 1) % capacity;
             return list[front];
         }
@@ -47,7 +48,7 @@ public class Queue {
         return this.size;
     }
     public static void main (String [] args){
-        Queue q = new Queue(4);
+       // Queue q = new Queue(4);
         /*q.push(1);
         System.out.println(q.peek());
         q.push(2);
