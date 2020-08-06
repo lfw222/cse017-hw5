@@ -40,7 +40,7 @@ public class Graph{
         }
         return traversed;
     }
-    public ArrayList<Integer> traverse_dfs(int start){
+    public ArrayList<Integer> traverse_dfs(int start){ // not working properly looked at psuedo code still cant seem to get it to iterate properly
         ArrayList<Integer> traversed = new ArrayList<Integer>();
         Stack S = new Stack(5);
         int n = start;
