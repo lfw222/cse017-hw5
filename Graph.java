@@ -1,41 +1,50 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 public class Graph{
     private int [][] graph;
+    private int [] traversed;
     
     public Graph(int [][] graph){
         this.graph = graph;
     }
     public void add_edge(int from, int to){
         graph[from][to] = 1;
-        graph[to][from]=1; // need to make graph undirected
     }
     public void remove_egde(int from, int to){
         graph[from][to] = 0;
-        graph[to][from]= 0;
     }
-    public int [] traverse_bfs(int start){
+    public ArrayList<Integer> traverse_bfs(int start){
+        //graph row and column start at 0.
+        int n = start;
         Queue Q = new Queue(5);
         boolean [] visited = new boolean [graph.length];
-        int [] traversed = new int [graph.length];
+        ArrayList<Integer> traversed = new ArrayList<Integer>();
         Q.push(start);
         visited[start] = true;
-        System.out.println(Q.peek());
-        while(Q.getsize() > 0){
-            int n = Q.peek();
-            Q.pop();
-            for(int i = 0; i <graph[n].length -1; i++){
+        traversed.add(start);
+        int count = 0;
+        while(Q.getsize() != 0){
+            n = Q.peek();
+            System.out.println(traversed);
+            Q.pop();     
+            for(int i = 0; i < graph.length; i++){ 
+                if (n != 5){
                 if (graph[n][i] == 1 && visited[i] == false){
                     Q.push(i+1);
                     visited[i] = true;
-                    traversed[i] = n;
+                    traversed.add(i);    
                 }
-                else{
-                    continue;
-                }
-
-            }
+            }  
+            
+        }
         }
         return traversed;
+    }
+    public ArrayList<Integer> traverse_dfs(int start){
+        ArrayList<Integer> traversed = new ArrayList<Integer>();
+        Stack S = new Stack(5);
+
+        return travsersed;
     }
     public void print(){
         for(int i=0; i < graph.length; i++){
