@@ -43,8 +43,23 @@ public class Graph{
     public ArrayList<Integer> traverse_dfs(int start){
         ArrayList<Integer> traversed = new ArrayList<Integer>();
         Stack S = new Stack(5);
-
-        return travsersed;
+        int n = start;
+        boolean [] visited = new boolean [graph.length];
+       // if (!visited[n]){
+        visited[n] = true;
+        traversed.add(n);
+       // }
+        S.push(n);
+        
+        for(int i = n; i < graph.length; i++){ 
+            
+            if(!visited[i]){
+            return traverse_dfs(i);
+            }  
+            System.out.println(traversed);
+        }
+        
+        return traversed;
     }
     public void print(){
         for(int i=0; i < graph.length; i++){
@@ -76,6 +91,8 @@ public class Graph{
         G.print();
 
         G.traverse_bfs(1);
+        System.out.println();
+        G.traverse_dfs(0);
 
 
 
