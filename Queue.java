@@ -48,13 +48,13 @@ public class Queue {
         return this.size;
     }
     public static void main (String [] args){
-       Queue q = new Queue(4);
-        q.push(1);
-        System.out.println(q.peek());
+      // Queue q = new Queue(4);
+        //q.push(1);
+        //System.out.println(q.peek());
         //q.push(2);
        // q.push(9);
        // System.out.println(q.peek());
-        q.pop();
+        //q.pop();
        // System.out.println(q.peek());
         //q.pop();
        // System.out.println(q.peek());
